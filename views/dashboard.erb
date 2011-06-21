@@ -1,0 +1,7 @@
+<div id='board'>
+<% panels.each do |name,panel| %>
+  <div id="<%= name %>">
+  </div>
+  <script type='text/javascript'>activate_panel("<%= name %>",<%= panel.update %>)</script>
+<% end %>
+</div>

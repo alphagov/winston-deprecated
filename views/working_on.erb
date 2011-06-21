@@ -1,0 +1,14 @@
+<div style="clear:left;padding-top:40px">
+<table>
+  <% activities.each do |a| %>
+  <tr>
+    <td>
+      <% a.persons.each do |p| %>
+      <img src="<%= p.gravatar %>">
+      <% end %>
+    </td>
+    <td><%= a.name %></td>
+  </tr>
+  <% end %>
+</table>
+</div>

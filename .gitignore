@@ -1,0 +1,5 @@
+.DS_Store
+my.db
+.bundle
+development.db
+config.yml

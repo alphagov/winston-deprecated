@@ -1,0 +1,5 @@
+campfire_token: [token]
+campfire_room: [chat]
+campfire_subdomain: [ourchatroom]
+winston_service: 'http://localhost:9292/winston.json'
+calendar_url: "http://www.google.com/calendar/ical/yadayadayada.ics"
