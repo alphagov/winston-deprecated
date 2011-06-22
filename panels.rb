@@ -34,7 +34,7 @@ class Calendar
      
      while(cur_date < next_week)
         events = cals.first.events.select do |e|
-          e.dtstart <= cur_date && e.dtend >= cur_date
+          e.dtstart <= cur_date && e.dtend > cur_date
         end
         events.each do |e|
           expanded_events << [cur_date,clean_up(e.summary)]
