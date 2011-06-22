@@ -3,7 +3,7 @@ require 'digest/md5'
 class Activity
   include DataMapper::Resource
   property :id, Serial
-  property :name, String
+  property :name, String, :length => 255
   property :created, DateTime
   property :last_worked_on, DateTime
   has n, :persons
