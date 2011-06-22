@@ -20,7 +20,7 @@ class Winston
 end
 
 WINSTON = Winston.new do |winston|
-  winston.on(/^I'm working on "(.*)"/i) do |message,args|
+  winston.on(/^[^"]*?"(.*)"/i) do |message,args|
     project = args[0]
     person = Person.first(:email => message['user']['email_address'])
     unless person
