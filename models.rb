@@ -29,8 +29,11 @@ class Person
     if activity_name
       wordcount = 8
       words = activity_name.split
-      name = words[0...wordcount].join(" ") + (words.size > wordcount ? “…” : "")
+      name = words[0...wordcount].join(" ") + (words.size > wordcount ? "..." : "")
       self.activity = Activity.first_or_create :name=>name
+      self.save
+    else
+      self.activity = nil
       self.save
     end
   end

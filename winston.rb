@@ -30,6 +30,24 @@ WINSTON = Winston.new do |winston|
     "#{message['user']['name']} working on \"#{project}\". Got it."
   end
   
+  winston.on(/I'm away/i) do |message,args|
+    person = Person.first(:email=>message['user']['email_address'])
+    if person
+      person.working_on(nil)
+    end
+    "Okey doke. Woof!"
+  end
+  
+  winston.on(/(.*) is away/i) do |message,args|
+    person = Person.first(:name=>args[0])
+    if person
+      person.working_on(nil)
+      "Okey doke. Woof!"
+    else
+      "Hmm. Don't know who #{args[0]} is. Oh well. Back to the kennel."
+    end
+  end 
+  
   winston.on(/^hello/i) do |message,args|
     unless Person.first(:email => message['user']['email_address'])
       name = message['user']['name']
