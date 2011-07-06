@@ -44,11 +44,25 @@ ul.people {
 }
 
 ul.people li {
+    font-family: 'Georgia';
+    color: rgb(220,220,220);
+    font-size: 22pt;
     display: block;
     float: left;
-    width: 50%;
-    margin: 0;
+    clear: none;
+    width: 48%;
     padding: 0;
+    padding-right: 15px;
+    margin: 0;
+    border-top: 1px solid #777;
+    line-height: 1.3em;
+    height: 3em;
+}
+
+ul.people li img {
+   float: left;
+   display: block;
+   padding-right: 10px;
 }
 
 table {
@@ -134,4 +148,3 @@ li .content {
     font-size: 20px;
     top: 9px;
 }
-
